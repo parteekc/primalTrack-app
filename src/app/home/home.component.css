@@ -1,0 +1,49 @@
+.options .img{
+    height: 8rem;
+    width:  8rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.options, .user-details{
+    padding: 2rem;
+    text-align: center; 
+    text-align: -webkit-center; 
+}
+.options .content{
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+}
+.health-condition{
+    background-color: #c4e1a4;
+    border-top: 0.5px solid #9dd6d0;
+    border-bottom: 0.5px solid #9dd6d0;
+}
+
+.user-details .user-img{
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.user-details .user-name{
+    font-size: 1.5rem;
+    color: slategrey;
+}
+
+.star-level .img{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.star-level .content{
+    font-size: 1.1rem;
+}
+.star-level .star, .star-level .level{
+    text-align: left;
+    text-align: -webkit-left;
+}
+.heading-top{
+    background-color: #e0e0e0;
+}
