@@ -36,3 +36,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Sign In 
 
 ![Sign In](src/assets/screenshots/sign-in-mobile.png)
+
+3. Health Report 
+
+![Health Report](src/assets/screenshots/health-report.png)
+
+4. Connection
+
+![Connection](src/assets/screenshots/connection.png)
