@@ -1,0 +1,59 @@
+/* 
+        Heading 
+*/
+.heading-top{
+    background-color: #e0e0e0;
+}
+.heading-top .back-btn{
+    clip-path: polygon(0% 0%, 100% 100%, 100% -125%, 0% 50%, 25% 100%, 100% 100%);
+    width: 5rem;
+    background-color: #321b91;
+    color: #fff;
+}
+
+.connection-img{
+    padding: 3rem;
+}
+.connection-img img{
+    border-radius: 50%;
+    animation: 1.6s playShadow ease-out infinite;
+}
+.connection-img img:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    transition: .35s;
+}
+@keyframes playShadow {
+    0% {
+      box-shadow: 0 0 0 0px rgba(1, 145, 178, 0.3), 0 0 0 0px rgb(1, 145, 178, 0.2);
+      transform: scale(1);
+    }
+    18% {
+      box-shadow: 0 0 0 0px rgba(1, 145, 178, 0.3), 0 0 0 0px rgba(1, 145, 178, 0.2);
+    }
+    35% {
+      transform: scale(1.08);
+    }
+    76% {
+      transform: scale(0.96);
+    }
+    100% {
+      box-shadow: 0 0 0 16px rgba(1, 145, 178, 0), 0 0 0 27px rgba(1, 145, 178, 0);
+      transform: scale(1);
+    }
+  }
+  
+.connection-content p{
+    font-size: 1.5rem;
+}
+.cancel-btn{
+    color: #fff;
+    background-color: #007aff;
+    width: 15rem;
+    font-size: 1.5rem;
+}
