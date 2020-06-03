@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ConnectionComponent } from './connection/connection.component';
+import { HealthReportComponent } from './health-report/health-report.component';
 
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'signin', pathMatch: 'full'
+    path: '', redirectTo: 'health', pathMatch: 'full'
   },
   {
     path: 'home', component: HomeComponent
@@ -14,12 +16,12 @@ const routes: Routes = [
   {
     path: 'signin', component: SignInComponent
   },
-  // {
-  //   path: 'login', component: LoginComponent
-  // },
-  // {
-  //   path: 'register', component: RegisterComponent
-  // }
+  {
+    path: 'connection', component: ConnectionComponent
+  },
+  {
+    path: 'health', component: HealthReportComponent
+  }
 ];
 
 @NgModule({
