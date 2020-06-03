@@ -1,0 +1,86 @@
+/* 
+        Heading 
+*/
+.heading-top{
+    background-color: #e0e0e0;
+}
+
+/* 
+        Logo Name
+*/
+.logo-name{
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+    text-align: center; 
+    text-align: -webkit-center; 
+    background-color: #0d2b5f;
+}
+.logo-name .img{
+    height: 8rem;
+    width: 8rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.logo-name .content{
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+/* 
+
+*/
+
+form {
+    margin: 100px;
+}
+.input-field {
+    position: relative;
+    width: 250px;
+    height: 44px;
+    line-height: 20px;
+}
+label {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    color: #312f2f;
+    transition: 0.2s all;
+    cursor: text;
+}
+input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #d3d3d3;
+    box-shadow: none;
+    color: #111;
+}
+input:invalid {
+    outline: 0;
+}
+input:focus, input:valid {
+    border-color: #1a76d2;
+}
+input:focus ~ label, input:valid ~ label {
+    font-size: 12px;
+    top: -24px;
+    color: #1a76d2;
+}
+.forgot-password a, .forgot-password{
+    font-size: 14px;
+    text-align: right;
+    color: #312f2f;
+    text-decoration: none;
+}
+.submit-btn{
+    background-color: #1a76d2;
+    color: #fff;
+    border-radius: 5rem;
+    text-align: center;
+    width: 15rem;
+}
