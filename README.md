@@ -35,4 +35,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 2. Sign In 
 
-![Sign In](src/assets/screenshots/signin-mobile.png)
+![Sign In](src/assets/screenshots/sign-in-mobile.png)
