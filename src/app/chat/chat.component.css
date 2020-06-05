@@ -1,0 +1,23 @@
+/* 
+        Heading 
+*/
+.heading-top{
+    background-color: #e0e0e0;
+}
+.heading-top .back-btn{
+    clip-path: polygon(0% 0%, 100% 100%, 100% -125%, 0% 50%, 25% 100%, 100% 100%);
+    width: 5rem;
+    background-color: #321b91;
+    color: #fff;
+}
+
+ 
+.connection-content p{
+    font-size: 1.5rem;
+}
+.cancel-btn{
+    color: #fff;
+    background-color: #007aff;
+    width: 15rem;
+    font-size: 1.5rem;
+}

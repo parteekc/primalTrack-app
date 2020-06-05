@@ -5,6 +5,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { HealthReportComponent } from './health-report/health-report.component';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'achievements', component: AchievementsComponent
+  },
+  {
+    path: 'chat', component: ChatComponent
   }
 ];
 

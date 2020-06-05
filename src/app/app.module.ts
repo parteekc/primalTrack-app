@@ -8,6 +8,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { HealthReportComponent } from './health-report/health-report.component';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AchievementsComponent } from './achievements/achievements.component';
     SignInComponent,
     ConnectionComponent,
     HealthReportComponent,
-    AchievementsComponent
+    AchievementsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
