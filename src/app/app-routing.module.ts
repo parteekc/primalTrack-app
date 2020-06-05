@@ -6,29 +6,30 @@ import { ConnectionComponent } from './connection/connection.component';
 import { HealthReportComponent } from './health-report/health-report.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { ChatComponent } from './chat/chat.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'signin', pathMatch: 'full'
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
-    path: 'home', component: HomeComponent
+    path: 'home', component: HomeComponent, canActivate: [AuthGuard]
   },
   {
     path: 'signin', component: SignInComponent
   },
   {
-    path: 'connection', component: ConnectionComponent
+    path: 'connection', component: ConnectionComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'health', component: HealthReportComponent
+    path: 'health', component: HealthReportComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'achievements', component: AchievementsComponent
+    path: 'achievements', component: AchievementsComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'chat', component: ChatComponent
+    path: 'chat', component: ChatComponent, canActivate: [AuthGuard]
   }
 ];
 
