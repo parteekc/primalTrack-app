@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "primaltrack-app": {
+      "hosting": {
+        "ucsf-app": [
+          "primaltrack-app"
+        ]
+      }
+    }
+  }
+}

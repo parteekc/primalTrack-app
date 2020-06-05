@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "ucsf-app",
+      "public": "dist/ucsf-app",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
