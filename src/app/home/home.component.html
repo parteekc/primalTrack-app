@@ -2,7 +2,7 @@
     <div class="row heading-top py-2">
         <h3 class="mx-auto">Home</h3>
     </div>
-    <div class="row user-details">
+    <div class="row user-details" [routerLink]="['/achievements']">
         <div class="col-6 user">
             <div class="user-img" style="background-image: url('../../assets/img/home/nurse.png');"></div>
             <h2 class="user-name mt-3">Sophie User</h2>
@@ -30,11 +30,11 @@
             <div class="img" style="background-image: url('../../assets/img/home/diagnosis.png');"></div>
             <div class="content">Diagnosis</div>
         </div>
-        <div class="col-lg-3 col-6 p-2">
+        <div class="col-lg-3 col-6 p-2" [routerLink]="['/connection']">
             <div class="img" style="background-image: url('../../assets/img/home/connect.png');"></div>
             <div class="content">Connect to wearables</div>
         </div>
-        <div class="col-lg-3 col-6 p-2">
+        <div class="col-lg-3 col-6 p-2" [routerLink]="['/health']">
             <div class="img" style="background-image: url('../../assets/img/home/healthreport.png');"></div>
             <div class="content">Health Report</div>
         </div>

@@ -35,6 +35,7 @@
 .star-level .star, .star-level .level{
     text-align: left;
     text-align: -webkit-left;
+    cursor: pointer;
 }
 
 /* 
@@ -55,6 +56,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .options{
     padding: 2rem;
@@ -64,4 +66,5 @@
 .options .content{
     padding-top: 0.5rem;
     font-size: 1.2rem;
+    cursor: pointer;
 }
