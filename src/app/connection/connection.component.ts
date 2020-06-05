@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-connection',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnectionComponent implements OnInit {
 
-  constructor() { 
+  constructor(public location: Location ) { 
     document.title= "Connection";
   }
 
   ngOnInit() {
+    console.log("on init connection");
   }
 
 }
