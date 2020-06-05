@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -7,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() {
+  constructor(public auth: AuthService, private router: Router) {
     document.title = "Sign in";
+    auth.user$.subscribe(data => {
+      if(data)
+        this.router.navigate(['/']);
+    })
    }
 
   ngOnInit() {
+  }
+
+  async googleSignIn(){
+    await this.auth.googleSignin();
   }
 
 }
