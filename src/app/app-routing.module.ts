@@ -4,11 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { HealthReportComponent } from './health-report/health-report.component';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'health', pathMatch: 'full'
+    path: '', redirectTo: 'signin', pathMatch: 'full'
   },
   {
     path: 'home', component: HomeComponent
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'health', component: HealthReportComponent
+  },
+  {
+    path: 'achievements', component: AchievementsComponent
   }
 ];
 
