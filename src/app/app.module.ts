@@ -16,6 +16,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const config ={
   apiKey: "AIzaSyDBkiE7P2deQCKJz4Jo8cwZ2f5hG8Ug-cI",
@@ -44,6 +46,7 @@ const config ={
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
