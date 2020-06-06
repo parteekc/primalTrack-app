@@ -33,54 +33,18 @@
 
 */
 
-form {
-    margin: 100px;
-}
-.input-field {
-    position: relative;
-    width: 250px;
-    height: 44px;
-    line-height: 20px;
-}
-label {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    color: #312f2f;
-    transition: 0.2s all;
-    cursor: text;
-}
-input {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid #d3d3d3;
-    box-shadow: none;
-    color: #111;
-}
-input:invalid {
-    outline: 0;
-}
-input:focus, input:valid {
-    border-color: #1a76d2;
-}
-input:focus ~ label, input:valid ~ label {
-    font-size: 12px;
-    top: -24px;
-    color: #1a76d2;
-}
-.forgot-password a, .forgot-password{
-    font-size: 14px;
-    text-align: right;
-    color: #312f2f;
-    text-decoration: none;
-}
-.submit-btn{
-    background-color: #1a76d2;
-    color: #fff;
-    border-radius: 5rem;
+
+mat-card {
+    /* max-width: 400px; */
+    margin: 2em auto;
     text-align: center;
-    width: 15rem;
 }
+  
+mat-form-field {
+    display: block;
+}
+
+mat-form-field input{
+    font-size: 1.3rem;
+}
+

@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="row heading-top py-2">
+        <h3 class="mx-auto">Sign Up</h3>
+    </div>
+
+    <mat-card>
+        <mat-card-content>
+          <form [formGroup]="createSignUpForm" (ngSubmit)="emailSignUp(createSignUpForm.value)">
+            <!-- <h5>Sign up With Email</h5> -->
+            <mat-error *ngIf="errExist">
+                {{errMsg}}
+            </mat-error>
+            <mat-form-field class="full-width-input">
+                <input matInput type="text" placeholder="Full Name" formControlName="signup_name" >
+                <div *ngIf="submitted && fc.signup_name.errors">
+                    <mat-error *ngIf=" fc.signup_name.errors.required">Name is required</mat-error>
+                </div>
+            </mat-form-field>  
+            <mat-form-field class="full-width-input">
+              <input matInput type="text" placeholder="Email" formControlName="signup_email" >
+              <div *ngIf="submitted && fc.signup_email.errors">
+                <mat-error *ngIf="fc.signup_email.errors.required">Email is required</mat-error>
+                <mat-error *ngIf="fc.signup_email.errors.email">Email is not valid</mat-error>
+              </div>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+              <input matInput type="text" placeholder="Password" formControlName="signup_password">
+              <div *ngIf="submitted && fc.signup_password.errors">
+                <mat-error *ngIf="fc.signup_password.errors.required">Password is required</mat-error>
+                <mat-error *ngIf="!fc.signup_password.errors.required && (fc.signup_password.status === 'INVALID') ">Minimum length should be 6</mat-error>
+              </div>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">Sign Up</button>
+          </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+        <!-- <form 
+            class="mx-auto mb-2 mt-5"
+            (submit)="emailSignUp(createSignUpForm.value)" 
+            [formGroup]="createSignUpForm"
+            >
+
+            <div class="input-field">
+                <input
+                    formControlName="signup_name"
+                    name="name"
+                    type="text" 
+                    id="inputname" 
+                    />
+                <label for="inputname">NAME</label>
+                <div *ngIf="submitted && fc.signup_name.errors" class="text-danger">
+                    <div *ngIf="fc.signup_name.errors.required">Name is required</div>
+                </div>
+            </div>
+            <div class="mt-5 input-field">
+                <input
+                    formControlName="signup_email"
+                    name="email"
+                    type="text" 
+                    id="inputemail" 
+                    />
+                <label for="inputemail">EMAIL</label>
+                <div *ngIf="submitted && fc.signup_email.errors" class="text-danger">
+                    <div *ngIf="fc.signup_email.errors.required">Email is required</div>
+                    <div *ngIf="fc.signup_email.errors.email">Email format not found</div>
+                </div>
+            </div>
+            <div class="mt-5 input-field">
+                <input 
+                    formControlName="signup_password"
+                    type="text" 
+                    name="password"
+                    id="inputPassword" 
+                    />
+                <label for="inputPassword">PASSWORD</label>
+
+                <div *ngIf="submitted && fc.signup_password.errors" class="text-danger">
+                    <div *ngIf="fc.signup_password.errors.required">Password is required</div>
+                    <div *ngIf="!fc.signup_password.errors.required && (fc.signup_password.status === 'INVALID')">Minimum length 6 is required</div>
+                </div>
+            </div>
+            <button type="submit" class="mt-5 submit-btn btn">SUBMIT <span class="ml-4">➞</span> </button>
+
+            <div *ngIf="emailErr" class=" mx-auto mt-3 text-danger">
+                <div >Email already exists</div>
+            </div>        
+    
+        </form>
+ -->

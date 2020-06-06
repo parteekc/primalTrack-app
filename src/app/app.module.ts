@@ -10,14 +10,25 @@ import { HealthReportComponent } from './health-report/health-report.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { ChatComponent } from './chat/chat.component';
 
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import {
+  MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,
+} from '@angular/material';
+  
+  import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+//
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const config ={
   apiKey: "AIzaSyDBkiE7P2deQCKJz4Jo8cwZ2f5hG8Ug-cI",
@@ -38,15 +49,21 @@ const config ={
     ConnectionComponent,
     HealthReportComponent,
     AchievementsComponent,
-    ChatComponent
+    ChatComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
     AngularFireAuthModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,
+  BrowserAnimationsModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
