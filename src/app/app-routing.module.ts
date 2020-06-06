@@ -40,8 +40,12 @@ const routes: Routes = [
 
 ];
 
+const config = {
+  useHash: true
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
