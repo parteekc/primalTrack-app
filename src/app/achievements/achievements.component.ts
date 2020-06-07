@@ -15,19 +15,63 @@ export class AchievementsComponent implements OnInit {
 
   ngOnInit() {
 
-    let status = document.getElementById('status');
+  }
+
+  startGyro(){
     if ( 'Gyroscope' in window ) {
-      
       let sensor = new window.Gyroscope();
-      console.log("sensor ", sensor);
+      // console.log("sensor ", sensor);
       sensor.addEventListener('reading', function(e) {
-        status.innerHTML = 'x: ' + e.target.x + '<br> y: ' + e.target.y + '<br> z: ' + e.target.z;
-        console.log("sensor ststus ",status.innerHTML);        
+        document.getElementById('status').innerHTML = 'x: ' + e.target.x 
+                  + '<br> y: ' + e.target.y 
+                  + '<br> z: ' + e.target.z;
+        // console.log("sensor ststus ",status.innerHTML);        
       });
       sensor.start();
     }
-    else status.innerHTML = 'Gyroscope not supported';
-
   }
+
+  startAcc(){  
+    let sensor = new window.Accelerometer();
+    sensor.addEventListener('reading', function(e) {
+      document.getElementById('status').innerHTML = 'x: ' + e.target.x + ' y: ' + e.target.y + ' z: ' + e.target.z;
+      console.log(e.target);
+    });
+    sensor.start();
+  }
+
+  startAmbien(){
+    let sensor = new window.AmbientLightSensor();
+    
+    sensor.addEventListener('reading', function(e) {
+      document.getElementById('status').innerHTML = e.target.illuminance;
+      console.log(e.target.illuminance);
+   
+      var lux = e.target.illuminance;
+      console.log('L:', lux.map(0,500,0,255));
+      var val = lux.map(0,500,0,255);
+      document.body.style.backgroundColor = 'rgb('+val+','+val+','+val+')';   
+    });
+    sensor.start();
+  }
+
+  startMagno(){
+    let sensor = new window.Magnetometer();
+    sensor.addEventListener('reading', function(e) {
+      document.getElementById('status').innerHTML = 'x: ' + e.target.x + ' y: ' + e.target.y + ' z: ' + e.target.z;
+    });
+    sensor.start();
+  }
+
+  startMagno2(){
+    var sensor = new window.Magnetometer();
+    sensor.addEventListener('reading', function(e) {
+      let heading = Math.atan2(e.target.y, e.target.x) * (180 / Math.PI);
+      document.getElementById('status').innerHTML = 'Heading in degrees: ' + heading;
+    });
+    sensor.start();
+  }
+
+
 
 }
