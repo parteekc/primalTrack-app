@@ -20,11 +20,15 @@
                 </mat-error>
                 <mat-form-field class="full-width-input">
                   <input matInput type="text" placeholder="Email" formControlName="signin_email">
-                  <mat-error *ngIf="submitted && fc.signin_email.errors.required">Email is required</mat-error>
+                  <div *ngIf="submitted && fc.signin_email.errors">
+                    <mat-error *ngIf="fc.signin_email.errors.required">Email is required</mat-error>
+                  </div>                  
                 </mat-form-field>
                 <mat-form-field class="full-width-input">
                   <input matInput type="password" placeholder="Password" formControlName="signin_password">
-                  <mat-error *ngIf="submitted && fc.signin_password.errors.required">Password is required</mat-error>
+                  <div *ngIf="submitted && fc.signin_password.errors">
+                    <mat-error *ngIf="fc.signin_password.errors.required">Password is required</mat-error>
+                  </div>
                 </mat-form-field>
                 <div class=" text-right my-3">
                     FORGOT PASSWORD
