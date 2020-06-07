@@ -28,7 +28,7 @@ export class AchievementsComponent implements OnInit {
       this.gyroSensor = new window.Gyroscope();
       // console.log("sensor ", sensor);
       this.gyroSensor.addEventListener('reading', function(e) {
-        document.getElementById('status').innerHTML = 'Gyroscope <br> x: ' + e.target.x 
+        document.getElementById('gyro').innerHTML = 'Gyroscope <br> x: ' + e.target.x 
                   + '<br> y: ' + e.target.y 
                   + '<br> z: ' + e.target.z;
         // console.log("sensor ststus ",status.innerHTML);        
@@ -36,20 +36,20 @@ export class AchievementsComponent implements OnInit {
       this.gyroSensor.start();
     }
     else
-    document.getElementById('status').innerHTML = 'Gyroscope Not supported';
+    document.getElementById('gyro').innerHTML = 'Gyroscope Not supported';
   }
 
   startAcc(){  
     if ( 'Accelerometer' in window ) {
       this.accSensor = new window.Accelerometer();
       this.accSensor.addEventListener('reading', function(e) {
-        document.getElementById('status').innerHTML = 'Accelerometer <br> x: ' + e.target.x + ' y: ' + e.target.y + ' z: ' + e.target.z;
+        document.getElementById('acc').innerHTML = 'Accelerometer <br> x: ' + e.target.x + '<br> y: ' + e.target.y + '<br> z: ' + e.target.z;
         console.log(e.target);
       });
       this.accSensor.start();
     }
     else{
-      document.getElementById('status').innerHTML = 'Accelerometer Not supported';
+      document.getElementById('acc').innerHTML = 'Accelerometer Not supported';
     }
   }
 
@@ -60,7 +60,7 @@ export class AchievementsComponent implements OnInit {
     
       this.ambienSensor.addEventListener('reading', function(e) {
         alert('in event listener');
-        document.getElementById('status').innerHTML = 'AmbientLightSensor <br> ' + e.target.illuminance;
+        document.getElementById('ambien').innerHTML = 'AmbientLightSensor <br> ' + e.target.illuminance;
         console.log(e.target.illuminance);
     
         let lux = e.target.illuminance;
@@ -71,7 +71,7 @@ export class AchievementsComponent implements OnInit {
       this.ambienSensor.start();
     }
     else{
-      document.getElementById('status').innerHTML = 'AmbientLightSensor Not supported';      
+      document.getElementById('ambien').innerHTML = 'AmbientLightSensor Not supported';      
     }
   }
 
@@ -79,12 +79,12 @@ export class AchievementsComponent implements OnInit {
     if ( 'Magnetometer' in window ) {
       this.magnosensor = new window.Magnetometer();
       this.magnosensor.addEventListener('reading', function(e) {
-        document.getElementById('status').innerHTML = 'Magnetometer <br> x: ' + e.target.x + ' y: ' + e.target.y + ' z: ' + e.target.z;
+        document.getElementById('mag').innerHTML = 'Magnetometer <br> x: ' + e.target.x + ' y: ' + e.target.y + ' z: ' + e.target.z;
       });
       this.magnosensor.start();
     }
     else{
-      document.getElementById('status').innerHTML = 'Magnetometer Not supported';      
+      document.getElementById('mag').innerHTML = 'Magnetometer Not supported';      
     }
   }
 
@@ -93,21 +93,21 @@ export class AchievementsComponent implements OnInit {
       this.magno2sensor = new window.Magnetometer();
       this.magno2sensor.addEventListener('reading', function(e) {
         let heading = Math.atan2(e.target.y, e.target.x) * (180 / Math.PI);
-        document.getElementById('status').innerHTML = 'Magnetometer <br> Heading in degrees: ' + heading;
+        document.getElementById('mag2').innerHTML = 'Magnetometer <br> Heading in degrees: ' + heading;
       });
       this.magno2sensor.start();
     }
     else{
-      document.getElementById('status').innerHTML = 'Magnetometer Not supported';      
+      document.getElementById('mag2').innerHTML = 'Magnetometer Not supported';      
     }
   }
 
   stopAll(){
+    this.gyroSensor.stop();
     this.accSensor.stop();
     this.ambienSensor.stop();
     this.magno2sensor.stop();
     this.magnosensor.stop();
-    this.gyroSensor.stop();
   }
 
 
