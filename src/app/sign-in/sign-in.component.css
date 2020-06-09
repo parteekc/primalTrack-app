@@ -52,3 +52,9 @@ mat-form-field input{
     font-size: 1.3rem;
 }
 
+@media (min-width: 960px){    
+    .mat-form-field-appearance-legacy .mat-form-field-wrapper{    
+        width: 30%;
+        margin: 0 auto;
+    }
+}
