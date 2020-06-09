@@ -2,7 +2,8 @@
         Heading 
 */
 .heading-top{
-    background-color: #e0e0e0;
+    font-weight: bold;
+    margin-top: 30px;
 }
 
 /* 
@@ -12,15 +13,18 @@
     padding-top: 2.2rem;
     padding-bottom: 2.2rem;
     text-align: center; 
-    text-align: -webkit-center; 
-    background-color: #0d2b5f;
+    text-align: -webkit-center;
 }
 .logo-name .img{
-    height: 8rem;
-    width: 8rem;
+    background-image: url('../../assets/img/FullLogo.svg');
+    height: 25rem;
+    width: 25rem;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    margin: 0 auto;
+    border: 20px solid #aec2e6;
+    border-radius: 50%;
 }
 .logo-name .content{
     font-size: 1.8rem;

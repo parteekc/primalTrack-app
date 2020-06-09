@@ -38,7 +38,7 @@ const config ={
     ConnectionComponent,
     HealthReportComponent,
     AchievementsComponent,
-    ChatComponent
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
