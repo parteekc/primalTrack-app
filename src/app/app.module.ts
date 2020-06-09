@@ -54,12 +54,9 @@ const config ={
     HealthReportComponent,
     AchievementsComponent,
     ChatComponent,
-<<<<<<< HEAD
-=======
     SignUpComponent,
     DiagnosisComponent,
     DetailedReportComponent
->>>>>>> 0faf16dd3275f94b005be6a928797496b0ae2a20
   ],
   imports: [
     BrowserModule,
