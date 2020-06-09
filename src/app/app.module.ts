@@ -29,6 +29,10 @@ import { AuthGuard } from './auth.guard';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { DiagnosisComponent } from './diagnosis/diagnosis.component';
+// chart
+import { ChartsModule } from 'ng2-charts';
+import { DetailedReportComponent } from './health-report/detailed-report/detailed-report.component';
 
 const config ={
   apiKey: "AIzaSyDBkiE7P2deQCKJz4Jo8cwZ2f5hG8Ug-cI",
@@ -50,7 +54,9 @@ const config ={
     HealthReportComponent,
     AchievementsComponent,
     ChatComponent,
-    SignUpComponent
+    SignUpComponent,
+    DiagnosisComponent,
+    DetailedReportComponent
   ],
   imports: [
     BrowserModule,
@@ -61,9 +67,17 @@ const config ={
     AngularFirestoreModule,
     AngularFireAuthModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule,
-  BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCardModule, 
+    MatDialogModule, 
+    MatInputModule, 
+    MatTableModule,
+    MatToolbarModule, 
+    MatMenuModule,
+    MatIconModule, 
+    MatProgressSpinnerModule,
+    BrowserAnimationsModule,
+    ChartsModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
