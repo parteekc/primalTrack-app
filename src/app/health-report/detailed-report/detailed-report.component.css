@@ -1,0 +1,12 @@
+/* 
+        Heading 
+*/
+.heading-top{
+    background-color: #e0e0e0;
+}
+.heading-top .back-btn{
+    clip-path: polygon(0% 0%, 100% 100%, 100% -125%, 0% 50%, 25% 100%, 100% 100%);
+    width: 5rem;
+    background-color: #321b91;
+    color: #fff;
+}
