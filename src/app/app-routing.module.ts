@@ -7,6 +7,9 @@ import { HealthReportComponent } from './health-report/health-report.component';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { ChatComponent } from './chat/chat.component';
 import { AuthGuard } from './auth.guard';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { DiagnosisComponent } from './diagnosis/diagnosis.component';
+import { DetailedReportComponent } from './health-report/detailed-report/detailed-report.component';
 
 
 const routes: Routes = [
@@ -20,6 +23,9 @@ const routes: Routes = [
     path: 'signin', component: SignInComponent
   },
   {
+    path: 'signup', component: SignUpComponent
+  },
+  {
     path: 'connection', component: ConnectionComponent, canActivate: [AuthGuard]
   },
   {
@@ -31,6 +37,13 @@ const routes: Routes = [
   {
     path: 'chat', component: ChatComponent, canActivate: [AuthGuard]
   },
+  {
+    path: 'diagnosis', component: DiagnosisComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'detailed-report', component: DetailedReportComponent, canActivate: [AuthGuard]
+  },
+
 
 
 

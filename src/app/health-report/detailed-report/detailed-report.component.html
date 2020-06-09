@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row heading-top py-2 px-3">
+        <button class="btn back-btn" (click)="location.back()">Back</button>
+        <h3 class="mx-auto">Health Report</h3>
+    </div>
+
+    <h3 class="mt-4 text-center">Heart Rate& Blood Pressure</h3>
+
+    <div style="display: block">
+      <!-- <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas> -->
+      <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+
+  <app-diagnosis class="mt-4"></app-diagnosis>

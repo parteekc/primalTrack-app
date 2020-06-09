@@ -36,13 +36,13 @@ export class AuthService {
     async googleSignin() {
       const provider = new auth.GoogleAuthProvider();
       const credential = await this.afAuth.auth.signInWithPopup(provider);
-      return this.updateUserData(credential.user);
+      // console.log("credential", credential);
+      return this.updateUserDataGoogle(credential.user);
     }
   
-    private updateUserData(user) {
+    private updateUserDataGoogle(user) {
       // Sets user data to firestore on login
-      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-  
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);  
       const data = { 
         uid: user.uid, 
         email: user.email, 
@@ -51,6 +51,40 @@ export class AuthService {
       } 
       return userRef.set(data, { merge: true })
     }
+
+    async emailSignin(email, password){
+      return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+          .then((credential)=>{
+            return this.updateUserData(credential.user, email, password);
+          });
+    }
+    updateUserData(user, email, password) {
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);  
+      const data = { 
+        uid: user.uid,
+        email: email,
+        password: password
+      }
+      return userRef.set(data, {merge: true})
+    }
+
+    async emailSignUp(name, email, password){
+      return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+          .then((credential)=>{
+            this.updateUserData(credential.user, email, password).then(()=>{
+              this.setName(credential.user, name);
+            })
+          })
+    }
+    async setName(user, name){
+      const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);  
+      const data = { 
+        displayName: name,
+        // photoURL: 
+      }
+      return userRef.update(data);
+    }
+
   
     async signOut() {
       await this.afAuth.auth.signOut();

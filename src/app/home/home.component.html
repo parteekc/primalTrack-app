@@ -5,7 +5,8 @@
     </div>
     <div class="row user-details" [routerLink]="['/achievements']">
         <div class="col-6 user">
-            <div class="user-img" [ngStyle]="{'background-image': 'url('+userData.photoURL+')'   }" ></div>
+            <div class="user-img" *ngIf="userData.photoURL !== undefined" [ngStyle]="{'background-image': 'url('+userData.photoURL+')'   }" ></div>
+            <div class="user-img" *ngIf="userData.photoURL === undefined" [ngStyle]="{'background-image': 'url(https://static.thenounproject.com/png/363639-200.png)'   }" ></div>
             <h2 class="user-name mt-3">{{userData.displayName}}</h2>
         </div>
         <div class="col-6 star-level my-auto">
@@ -27,7 +28,7 @@
             <div class="img" style="background-image: url('../../assets/img/home/chatwithme.png');"></div>
             <div class="content">Chat with me</div>
         </div>
-        <div class="col-lg-3 col-6 p-2">
+        <div class="col-lg-3 col-6 p-2" [routerLink]="['/diagnosis']">
             <div class="img" style="background-image: url('../../assets/img/home/diagnosis.png');"></div>
             <div class="content">Diagnosis</div>
         </div>
