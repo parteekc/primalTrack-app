@@ -75,3 +75,22 @@
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+.options div[class*="col-lg"]{
+    border: 5px solid #c4e1a4;
+    border-radius: 30px;
+    opacity: .7;
+    transform: scale(.95);
+    transition: .5s;
+}
+
+.options div[class*="col-lg"]:hover{
+    border-color: antiquewhite;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.options div[class*="col-lg"]:focus{
+    outline: none;
+    border-radius: 30px;
+}

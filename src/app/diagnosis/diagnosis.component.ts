@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {sys_dia} from '../../assets/json/sys_dia';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Label, Color, BaseChartDirective } from 'ng2-charts';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-diagnosis',
@@ -122,7 +123,9 @@ export class DiagnosisComponent implements OnInit {
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  constructor() { }
+  constructor(public location: Location ) { 
+    document.title= "Diagnosis";
+  }
 
   ngOnInit() {
   }
