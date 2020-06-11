@@ -1,4 +1,4 @@
-(src/assets/icons/icon-512x512.png)
+![MIIA](src/assets/icons/icon-512x512.png)
 
 # MIIA App
 
